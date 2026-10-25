@@ -1,0 +1,16 @@
+# ALSD-AI backend dependencies (put this file in the backend/ folder)
+# Install:  pip install -r requirements.txt
+# After everything works on your laptop, run `pip freeze` in your venv and pin
+# the versions of the packages below so the deploy matches your tested setup.
+
+fastapi
+uvicorn[standard]
+python-multipart        # file uploads (UploadFile)
+pillow
+numpy
+opencv-python-headless  # cv2 (video / live frames)
+torch                   # on the server use the CPU build
+torchvision
+ultralytics==8.4.120    # YOLO11 detector (version used for training)
+google-genai            # chatbot (Gemini)
+anthropic               # optional: only if CHAT_PROVIDER=anthropic

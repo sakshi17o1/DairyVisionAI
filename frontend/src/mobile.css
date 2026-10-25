@@ -1,0 +1,70 @@
+/* =========================================================
+   MOBILE LAYOUT (phones) - loaded after index.css
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  /* ---------- Navbar ---------- */
+  .navbar { height: 62px; padding: 0 12px; }
+  .navbar-brand h1 { font-size: 17px; }
+  .navbar-brand span { display: none; }          /* hide long subtitle */
+  .brand-icon { width: 36px; height: 36px; font-size: 20px; }
+  .navbar-actions { gap: 8px; }
+  .profile span { display: none; }
+  .icon-button { display: none; }
+
+  /* ---------- Sidebar -> bottom navigation ---------- */
+  .app-body { display: block; min-height: calc(100vh - 62px); }
+
+  .sidebar {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    width: 100%;
+    padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+    border-right: none;
+    border-top: 1px solid #e5e9e6;
+    z-index: 200;
+  }
+  .sidebar nav { flex-direction: row; gap: 2px; justify-content: space-around; }
+  .nav-item {
+    flex: 1;
+    flex-direction: column;
+    gap: 3px;
+    padding: 7px 2px;
+    font-size: 11px;
+    text-align: center;
+    justify-content: center;
+    min-width: 0;
+  }
+  .nav-item span { display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  /* ---------- Content ---------- */
+  .main-content { padding: 16px 14px 96px; }       /* room for bottom nav */
+  .dashboard-header h2, .page-header h2 { font-size: 24px; }
+  .analysis-options { grid-template-columns: 1fr; gap: 12px; margin-bottom: 26px; }
+  .capability-grid { grid-template-columns: 1fr; }
+  .result-summary { grid-template-columns: 1fr; }
+
+  .upload-section { padding: 30px 16px; min-height: 0; }
+  .preview-section { padding: 14px; }
+  .preview-container { min-height: 220px; }
+  .media-preview { max-height: 360px; }
+  .result-card { padding: 16px; gap: 12px; }
+  .result-card-icon { width: 40px; height: 40px; }
+
+  .live-controls { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+  .live-controls .control-button { width: 100%; justify-content: center; padding: 14px; }
+
+  /* ---------- Chatbot above the bottom nav ---------- */
+  .chat-fab { bottom: calc(78px + env(safe-area-inset-bottom)) !important; right: 14px !important; }
+  .chat-panel {
+    right: 8px !important; left: 8px !important;
+    width: auto !important;
+    bottom: calc(144px + env(safe-area-inset-bottom)) !important;
+    height: min(60vh, 480px) !important;
+  }
+}
+
+/* avoid 300ms tap delay + accidental zoom on buttons */
+button, .nav-item, .analysis-card { touch-action: manipulation; }
+input, select, textarea { font-size: 16px; }       /* stops iOS zoom on focus */

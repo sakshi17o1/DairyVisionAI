@@ -1,0 +1,48 @@
+/* ===== ALSD-AI navbar-extras.css  (bell + Admin dropdown styles) — search for "nx-badge" ===== */
+.nx-wrap { position: relative; display: inline-flex; }
+.nx-bell { position: relative; }
+.nx-badge {
+  position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; padding: 0 5px;
+  border-radius: 9px; background: #dc2626; color: #fff; font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; border: 2px solid #fff;
+}
+.nx-profile { cursor: pointer; background: transparent; border: none; font: inherit; color: inherit; display: inline-flex; align-items: center; gap: 8px; }
+
+.nx-panel {
+  position: fixed; top: 70px; right: 16px; width: 340px; max-width: calc(100vw - 24px);
+  background: #fff; color: #12332b; border: 1px solid #d3e8e0; border-radius: 14px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, .18); z-index: 5000; overflow: hidden; text-align: left;
+}
+.nx-head { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; border-bottom: 1px solid #e5efeb; }
+.nx-head.nx-col { flex-direction: column; align-items: flex-start; gap: 2px; }
+.nx-head small { color: #64748b; }
+.nx-link { background: none; border: none; color: #0f766e; font-weight: 600; cursor: pointer; font-size: 13px; padding: 0; }
+.nx-empty { padding: 22px 14px; color: #64748b; text-align: center; }
+.nx-list { list-style: none; margin: 0; padding: 0; max-height: 340px; overflow-y: auto; }
+.nx-item { display: flex; gap: 10px; padding: 11px 14px; border-bottom: 1px solid #f1f5f4; line-height: 1.4; font-size: 14px; }
+.nx-item small { color: #64748b; }
+.nx-unread { background: #f4faf8; }
+.nx-danger .nx-ico, .nx-item.nx-danger .nx-ico { color: #b91c1c; }
+.nx-item.nx-warn .nx-ico { color: #d97706; }
+.nx-item.nx-info .nx-ico { color: #0f766e; }
+.nx-ico { flex: none; margin-top: 2px; }
+.nx-foot { width: 100%; padding: 11px; border: none; background: #f1f5f4; color: #0f766e; font-weight: 600; cursor: pointer; }
+.nx-menuitem {
+  display: flex; align-items: center; gap: 8px; width: 100%; padding: 11px 14px; border: none; background: #fff;
+  text-align: left; font: inherit; cursor: pointer; color: #12332b; border-top: 1px solid #f1f5f4;
+}
+.nx-menuitem:hover, .nx-foot:hover { background: #eef6f3; }
+.nx-menuitem.nx-danger { color: #b91c1c; }
+.nx-status { display: flex; align-items: center; gap: 8px; padding: 10px 14px; font-size: 13px; }
+.nx-status .nx-link { margin-left: auto; }
+.nx-status.nx-online { color: #166534; }
+.nx-status.nx-offline { color: #b91c1c; }
+.nx-status.nx-checking { color: #64748b; }
+.nx-admin { width: 260px; }
+@media (max-width: 640px) { .nx-panel { position: fixed; top: 66px; right: 12px; left: 12px; width: auto; max-width: none; } }
+
+/* make sure the header (and its dropdowns) sit above sidebar / page content and are never clipped */
+.navbar { position: relative; z-index: 4000; overflow: visible; }
+.navbar-actions { position: relative; z-index: 4001; }
+
+.nx-bell, .nx-profile { cursor: pointer; pointer-events: auto; }
